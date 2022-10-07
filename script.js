@@ -1,20 +1,22 @@
 const getAllPoweredValuesLimitedByNumber = (value) => {
   
-    if (typeof(value) != 'number'){
+    if (typeof(value) !== 'number'){
         return [];
     }
     
-	let result = [];
-    for (i=1; i <= value; i++) {
-        let power = Math.pow(i,2);
-        
-        if (power >= value) {
-        	console.log(result);
-            return result;
-        } else {
-        	result.push(power);
-        }  
-    }
+    const result = [];
+    let i = 1;
+		    
+    while ( i <= value) {
+		const power = Math.pow(i,2);
+ 				
+        if (power >= value) break;
+            result.push(power);
+        i++;
+	}   
+    
+    console.log(result);
+	return result;
 };
 
 getAllPoweredValuesLimitedByNumber(68);
