@@ -6,13 +6,12 @@ const getAllPoweredValuesLimitedByNumber = (value) => {
     
     const result = [];
     let i = 1;
-		    
-    while ( i <= value) {
-		const power = Math.pow(i,2);
- 				
-        if (power >= value) break;
-            result.push(power);
+	let power = Math.pow(i,2);
+
+    while (power <= value) {
+        result.push(power);
         i++;
+        power = Math.pow(i,2)
 	}   
     
     console.log(result);
